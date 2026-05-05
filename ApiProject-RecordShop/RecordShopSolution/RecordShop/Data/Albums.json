@@ -1,0 +1,44 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Eternal",
+    "Artist": "Taemin",
+    "Release": 2024,
+    "Genre": "K-pop"
+  },
+  {
+    "Id": 2,
+    "Name": "Thriller",
+    "Artist": "Michael Jackson",
+    "Release": 1982,
+    "Genre": "Pop"
+  },
+  {
+    "Id": 3,
+    "Name": "Back in Black",
+    "Artist": "AC/DC",
+    "Release": 1980,
+    "Genre": "Hard Rock"
+  },
+  {
+    "Id": 4,
+    "Name": "Rumours",
+    "Artist": "Fleetwood Mac",
+    "Release": 1977,
+    "Genre": "Rock"
+  },
+  {
+    "Id": 5,
+    "Name": "The Dark Side of the Moon",
+    "Artist": "Pink Floyd",
+    "Release": 1973,
+    "Genre": "Progressive Rock"
+  },
+  {
+    "Id": 6,
+    "Name": "21",
+    "Artist": "Adele",
+    "Release": 2011,
+    "Genre": "Soul"
+  }
+]
