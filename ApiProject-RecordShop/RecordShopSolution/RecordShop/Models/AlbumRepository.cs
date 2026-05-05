@@ -17,7 +17,7 @@ namespace RecordShop.Models
             var json = File.ReadAllText(_filePath);
             _album = JsonSerializer.Deserialize<List<Album>>(json) ?? new List<Album>();
         }
-
+        
         public List<Album> FindAlbumInStock()
         {
             return _album ?? new List<Album>();

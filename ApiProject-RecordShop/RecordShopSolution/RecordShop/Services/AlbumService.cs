@@ -16,9 +16,8 @@ namespace RecordShop.Services
         //GET all albums in stock 
         public List<Album> ListAlbumInStock()
         {
-            var albums = _albumModel.FindAlbumInStock();
-
-            return albums
+            return _albumModel
+                .FindAlbumInStock()
                 .Where(a => a.StockQuantity > 0)
                 .ToList();
         }

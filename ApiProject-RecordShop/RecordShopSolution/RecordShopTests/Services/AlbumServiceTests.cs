@@ -1,0 +1,63 @@
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using RecordShop.Models;
+using RecordShop.Services;
+using Shouldly;
+using System.Security.Cryptography.X509Certificates;
+
+namespace RecordShopTests.Services
+{
+    public class AlbumServiceTests
+    {
+        private Mock<IAlbumRepository> _mockRepo;
+        private AlbumService _services;
+
+
+        [SetUp]
+        public void Setup()
+        {
+            _mockRepo = new Mock<IAlbumRepository>();
+            _services = new AlbumService(_mockRepo.Object);
+        }
+
+        [Test]
+        public void ReturnOnlyAlbumsWithStock()
+        {
+            //Arrange
+
+            var mockData = new List<Album>
+            {
+                 new Album
+                {
+                    Id = 1,
+                    Name = "Eternal",
+                    Artist = "Taemin",
+                    Release = 2024,
+                    Genre = "K-pop",
+                    StockQuantity = 5,
+                    Price = 19.99m
+                },
+                new Album
+                {
+                    Id = 2,
+                    Name = "Thriller",
+                    Artist = "Michael Jackson",
+                    Release = 1982,
+                    Genre = "Pop",
+                    StockQuantity = 0,
+                    Price = 17.50m
+                }
+            };
+
+            _mockRepo.Setup(r => r.FindAlbumInStock()).Returns(mockData);
+        
+
+            //Act
+            var result = _services.ListAlbumInStock();
+            //Assert
+            result.Count.ShouldBe(1);
+            result[0].Name.ShouldBe("Eternal");
+
+        }
+    }
+}
