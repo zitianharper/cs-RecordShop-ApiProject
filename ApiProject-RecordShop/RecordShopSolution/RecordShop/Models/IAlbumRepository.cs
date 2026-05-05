@@ -3,6 +3,6 @@ namespace RecordShop.Models
 {
     public interface IAlbumRepository 
     {
-        List<Album> FindAllAlbum();
+        List<Album> FindAlbumInStock();
     }
 }

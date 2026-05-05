@@ -1,44 +1,48 @@
 ﻿[
   {
+    
     "Id": 1,
     "Name": "Eternal",
     "Artist": "Taemin",
     "Release": 2024,
-    "Genre": "K-pop"
+    "Genre": "K-pop",
+    "StockQuantity": 5,
+    "Price": 19.99
   },
   {
     "Id": 2,
     "Name": "Thriller",
     "Artist": "Michael Jackson",
-    "Release": 1982,
-    "Genre": "Pop"
+    "ReleaseYear": 1982,
+    "Genre": "Pop",
+    "StockQuantity": 0,
+    "Price": 17.50
   },
   {
     "Id": 3,
     "Name": "Back in Black",
     "Artist": "AC/DC",
-    "Release": 1980,
-    "Genre": "Hard Rock"
+    "ReleaseYear": 1980,
+    "Genre": "Hard Rock",
+    "StockQuantity": 3,
+    "Price": 15.00
   },
   {
     "Id": 4,
     "Name": "Rumours",
     "Artist": "Fleetwood Mac",
-    "Release": 1977,
-    "Genre": "Rock"
+    "ReleaseYear": 1977,
+    "Genre": "Rock",
+    "StockQuantity": 2,
+    "Price": 18.75
   },
   {
     "Id": 5,
     "Name": "The Dark Side of the Moon",
     "Artist": "Pink Floyd",
-    "Release": 1973,
-    "Genre": "Progressive Rock"
-  },
-  {
-    "Id": 6,
-    "Name": "21",
-    "Artist": "Adele",
-    "Release": 2011,
-    "Genre": "Soul"
+    "ReleaseYear": 1973,
+    "Genre": "Progressive Rock",
+    "StockQuantity": 1,
+    "Price": 21.00
   }
 ]

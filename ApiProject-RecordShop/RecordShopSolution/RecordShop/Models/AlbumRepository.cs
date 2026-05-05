@@ -18,7 +18,7 @@ namespace RecordShop.Models
             _album = JsonSerializer.Deserialize<List<Album>>(json) ?? new List<Album>();
         }
 
-        public List<Album> FindAllAlbum()
+        public List<Album> FindAlbumInStock()
         {
             return _album ?? new List<Album>();
         }

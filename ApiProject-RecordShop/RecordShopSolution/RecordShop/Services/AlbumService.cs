@@ -1,5 +1,5 @@
 ﻿using RecordShop.Models;
-
+using System.Linq;
 
 namespace RecordShop.Services
 {
@@ -12,10 +12,15 @@ namespace RecordShop.Services
             _albumModel = albumModel; 
         }
 
+
         //GET all albums in stock 
-        public List<Album> ListAllAlbum()
+        public List<Album> ListAlbumInStock()
         {
-            return _albumModel.FindAllAlbum();
+            var albums = _albumModel.FindAlbumInStock();
+
+            return albums
+                .Where(a => a.StockQuantity > 0)
+                .ToList();
         }
     }
 }

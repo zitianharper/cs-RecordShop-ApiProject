@@ -21,7 +21,7 @@ namespace RecordShop.Controllers
         [HttpGet]
         public ActionResult <List<Album>> GetAllAlbum()
         {
-            return Ok(_albumService.ListAllAlbum());
+            return Ok(_albumService.ListAlbumInStock());
         }
     }
 }
