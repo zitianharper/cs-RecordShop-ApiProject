@@ -111,7 +111,20 @@ namespace RecordShopTests.Services
 
             result.Id.ShouldBe(1);
             result.Name.ShouldBe("New Album");
+        }
 
+        [Test]
+        public void PutAlbum_ReturnUpdatedAlbum()
+        {
+            var input = new Album { Name = "New", StockQuantity = 5 };
+            var updated = new Album { Id = 1, Name = "New", StockQuantity = 5 };
+
+            _mockRepo.Setup(r => r.OverwriteAlbum(1, input)).Returns(updated);
+
+            var result = _services.ReplaceAlbum(1, input);
+
+            result.Id.ShouldBe(1);
+            result.Name.ShouldBe("New");
         }
     }
 }

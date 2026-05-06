@@ -52,5 +52,29 @@ namespace RecordShop.Models
             File.WriteAllText(_filePath, json);
             return album;   
         }
+
+        // PUT album
+        public Album OverwriteAlbum(int id, Album updated)
+        {
+            var existing = _album.FirstOrDefault(a => a.Id == id);
+
+            if (existing == null)
+            {
+                return null;
+            }
+
+            existing.Name = updated.Name;
+            existing.Artist = updated.Artist;
+            existing.Release = updated.Release;
+            existing.Genre = updated.Genre;
+            existing.StockQuantity = updated.StockQuantity;
+            existing.Price = updated.Price;
+
+            var json = JsonSerializer.Serialize(_album);
+            File.WriteAllText(_filePath, json);
+
+            return existing;
+        }
     }
 }
+ 

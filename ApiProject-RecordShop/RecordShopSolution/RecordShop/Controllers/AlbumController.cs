@@ -46,5 +46,17 @@ namespace RecordShop.Controllers
 
             return created;
         }
+
+        //PUT album
+        [HttpPut("{id}")]
+        public ActionResult<Album> PutAlbum(int id, Album updated)
+        {
+            var result = _albumService.ReplaceAlbum(id, updated);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
     }
 }

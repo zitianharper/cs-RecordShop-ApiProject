@@ -34,5 +34,10 @@ namespace RecordShop.Services
             return _albumModel.MakeAlbum(album);
         }
 
+        //PUT album
+        public Album ReplaceAlbum(int id, Album updated)
+        {
+            return _albumModel.OverwriteAlbum(id, updated);
+        }
     }
 }
