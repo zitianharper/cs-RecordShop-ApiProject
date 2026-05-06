@@ -59,5 +59,31 @@ namespace RecordShopTests.Services
             result[0].Name.ShouldBe("Eternal");
 
         }
+
+        [Test]
+        public void ReturnAlbumByIdMatchesResultId()
+        {
+            //Arrange
+
+            var mockData = new Album
+            {
+                Id = 1,
+                Name = "Eternal",
+                Artist = "Taemin",
+                Release = 2024,
+                Genre = "K-pop",
+                StockQuantity = 5,
+                Price = 19.99m
+            };
+
+            _mockRepo.Setup(r => r.FindAlbumById(1)).Returns(mockData);
+
+            //Act
+            var result = _services.ListAlbumById(1);
+
+            //Assert
+            result.Id.ShouldBe(1);
+
+        }
     }
 }

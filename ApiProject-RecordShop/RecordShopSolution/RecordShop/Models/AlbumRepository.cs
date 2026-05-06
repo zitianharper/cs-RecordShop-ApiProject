@@ -17,10 +17,21 @@ namespace RecordShop.Models
             var json = File.ReadAllText(_filePath);
             _album = JsonSerializer.Deserialize<List<Album>>(json) ?? new List<Album>();
         }
+
+        //GET all albums in stock
         
         public List<Album> FindAlbumInStock()
         {
             return _album ?? new List<Album>();
+        }
+
+        //GET album by Id
+
+        public Album FindAlbumById(int id)
+        {
+           
+            return _album.FirstOrDefault(a => a.Id == id);
+                
         }
     }
 }

@@ -21,5 +21,11 @@ namespace RecordShop.Services
                 .Where(a => a.StockQuantity > 0)
                 .ToList();
         }
+
+        //GET album by Id
+        public Album ListAlbumById(int id)
+        {
+            return _albumModel.FindAlbumById(id);
+        }
     }
 }
