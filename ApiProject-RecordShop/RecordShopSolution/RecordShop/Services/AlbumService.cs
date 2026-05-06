@@ -27,5 +27,12 @@ namespace RecordShop.Services
         {
             return _albumModel.FindAlbumById(id);
         }
+
+        //Post album
+        public Album CreateAlbum(Album album)
+        {
+            return _albumModel.MakeAlbum(album);
+        }
+
     }
 }

@@ -83,6 +83,34 @@ namespace RecordShopTests.Services
 
             //Assert
             result.Id.ShouldBe(1);
+        }
+
+        [Test]
+        public void PostAlbum_ReturnsAlbumWithId()
+        {
+            var input = new Album
+            {
+                Name = "New Album",
+                StockQuantity = 5,
+                Price = 10m
+            };
+
+            var returned = new Album
+            {
+                Id = 1,
+                Name = "New Album",
+                StockQuantity = 5,
+                Price = 10m
+            };
+
+            _mockRepo
+                .Setup(r => r.MakeAlbum(input))
+                .Returns(returned);
+
+            var result = _services.CreateAlbum(input);
+
+            result.Id.ShouldBe(1);
+            result.Name.ShouldBe("New Album");
 
         }
     }

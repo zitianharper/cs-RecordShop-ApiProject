@@ -34,9 +34,9 @@ namespace RecordShop.Models
                 
         }
 
-        //POST album by Id
+        //POST album
 
-        public Album PostAlbumById(Album album)
+        public Album MakeAlbum(Album album)
         {
             //Deserialize
 
@@ -50,7 +50,7 @@ namespace RecordShop.Models
             var json = JsonSerializer.Serialize(_album);
             //Write
             File.WriteAllText(_filePath, json);
-            return album;
+            return album;   
         }
     }
 }

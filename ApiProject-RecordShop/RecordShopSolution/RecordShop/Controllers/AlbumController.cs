@@ -18,8 +18,8 @@ namespace RecordShop.Controllers
 
         //GET all albums in stock 
 
-        [HttpGet]
-        public ActionResult<List<Album>> GetAllAlbum()
+        [HttpGet] 
+        public ActionResult<Album>GetAlbumInStock()
         {
             return Ok(_albumService.ListAlbumInStock());
         }
@@ -36,6 +36,15 @@ namespace RecordShop.Controllers
             }
 
             return Ok(album);
+        }
+
+        //POST album
+        [HttpPost]
+        public ActionResult<Album> PostAlbum(Album album)
+        {
+            var created = _albumService.CreateAlbum(album);
+
+            return created;
         }
     }
 }

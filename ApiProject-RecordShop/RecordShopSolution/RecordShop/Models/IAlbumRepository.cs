@@ -5,6 +5,6 @@ namespace RecordShop.Models
     {
         List<Album> FindAlbumInStock();
         Album FindAlbumById(int id);
-        Album MakeAlbumById(Album album);
+        Album MakeAlbum(Album album);
     }
 }
