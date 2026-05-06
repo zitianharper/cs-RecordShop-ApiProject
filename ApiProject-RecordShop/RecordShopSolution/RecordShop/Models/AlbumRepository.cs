@@ -33,5 +33,24 @@ namespace RecordShop.Models
             return _album.FirstOrDefault(a => a.Id == id);
                 
         }
+
+        //POST album by Id
+
+        public Album PostAlbumById(Album album)
+        {
+            //Deserialize
+
+            //Generate new Id
+            int newId = _album.Any() ? _album.Max(a => a.Id) + 1 : 1;
+            //Assign Id
+            album.Id = newId;
+            //Add to List
+            _album.Add(album);
+            //Serialize 
+            var json = JsonSerializer.Serialize(_album);
+            //Write
+            File.WriteAllText(_filePath, json);
+            return album;
+        }
     }
 }
