@@ -1,0 +1,18 @@
+﻿@using RecordShop.Web.Models;
+
+<h3>RecordSummary</h3>
+
+<p>Album Name: @Album.Name</p>
+<p>Artist: @Album.Artist</p>
+<p>Year: @Album.Release</p>
+<p>Genre: @Album.Genre</p>
+<p>Quantity in Stock: @Album.StockQuantity</p>
+<p>Price: @Album.Price</p>
+
+
+
+@code {
+    [Parameter]
+    public Album Album { get; set; } = new();
+
+}

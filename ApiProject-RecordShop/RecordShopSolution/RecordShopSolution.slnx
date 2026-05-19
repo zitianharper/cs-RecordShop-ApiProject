@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="RecordShop.Web/RecordShop.Web.Client/RecordShop.Web.Client.csproj" Id="04fbcf4a-7480-4ad2-9a8b-223ea0203b98" />
+  <Project Path="RecordShop.Web/RecordShop.Web/RecordShop.Web.csproj" Id="ebd43a0f-8f5f-406c-846b-071d139a8b69" />
   <Project Path="RecordShop/RecordShop.csproj" />
   <Project Path="RecordShopTests/RecordShopTests.csproj" Id="11977b5e-3c98-4b77-a0ca-c969918937a6" />
 </Solution>
